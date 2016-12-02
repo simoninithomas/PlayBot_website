@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO : Description -->
+
+    <title>PlayBot</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_orange-red.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <!-- Style CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/92ba8b4aeb.js"></script>
+
+    <!-- AngularJS JS -->
+    <script src="node_modules/angular/angular.min.js"></script>
+
+    <!-- AngularJS Translate JS -->
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+
+    <!-- AngularJS Routes JS -->
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+
+    <!-- AngularJS Analytics -->
+    <script src="bower_components/angulartics/dist/angulartics.min.js"></script>
+    <script src="bower_components/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Controllers JS -->
+    <script src="assets/js/controllers.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+
+        ga('create', 'UA-80427521-1', 'none');// CHANGE TO AUTO
+
+    </script>
+
+</head>
+
+<body ng-app="playBotApp">
+<!-- mdl-layout applique des styles prédéfinis qui se chargent essentiellement de l'Interface Utilisateur (UI) et ainsi faire en sorte que le menu de navigation s'affiche correctement. -->
+<!-- mdl-js-layout, elle a pour rôle d'ajouter un comportement plus dynamique grâce à JavaScript ; elle comprend l'ajout de nouveaux éléments et classes supplémentaires afin d'ajouter quelques fonctions. -->
+<!-- Always shows a header, even in smaller screens. -->
+
+
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+
+
+
+
+        <div class="mdl-layout__header-row ">
+            <!-- Title -->
+            <!--<span class="mdl-layout-title"><a style="text-decoration:none; color: white;" href="#/">Instant'ads</a></span>
+            <!-- Add spacer, to align navigation to the right -->
+
+            <div class="logo"><a href="#/home"><img style="padding-top: 35px" src="assets/img/PlayBot.png"></a></div>
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+
+
+                <!-- <a class="mdl-navigation__link" href="">How it works</a>
+                 <a class="mdl-navigation__link" href="">Link</a>
+                 <a class="mdl-navigation__link" href="">Link</a>
+                 <a class="mdl-navigation__link" href="">Link</a>-->
+            </nav>
+            <!-- Accent-colored raised button with ripple -->
+            <a href="http://goo.gl/forms/peEOGKUblZ3JYUsm1" analytics-on="click" analytics-category="GoToForm"><button class="mdl-button mdl-button--raised blue" translate="JOIN_BUTTON"></button></a>
+            </button>
+
+        </div>
+
+    <p><br></p>
+   <!-- <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>-->
+
+        <ng-view></ng-view>
+
+    <footer class="mdl-mega-footer">
+        <div class="mdl-mega-footer__middle-section">
+
+            <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">{{"F_ENTREPRISE" | translate }}</h1>
+                <ul class="mdl-mega-footer__link-list">
+                    <li><a href="#/about">{{"F_ABOUT" | translate }}</a></li>
+                    <li><a href="mailto:simonini_thomas@outlook.fr">{{"F_CONTACT" | translate }}</a></li>
+                    <li><a href="#/jobs">{{"F_JOBS" | translate }}</a></li>
+                    <li><a href="#/press">{{"F_PRESS" | translate }}</a></li>
+                </ul>
+            </div>
+
+            <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">{{"F_COMMUNITY" | translate }}</h1>
+                <ul class="mdl-mega-footer__link-list">
+                    <li><a href="https://medium.com/@simonini_thomas">{{"F_BLOG" | translate }}</a></li>
+                    <li><a href="#">{{"F_FOLLOWUSFACE" | translate }} <i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#">{{"F_TWITTER" | translate }} <i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#">{{"F_LN" | translate }} <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">{{"F_LANGUAGE" | translate }}</h1>
+                <ul class="mdl-mega-footer__link-list">
+                    <div ng-controller="homeCtrl">
+                    <button ng-click="changeLanguage('fr');" class="mdl-button mdl-button--raised blue">{{"F_FRENCH" | translate }}</button></a>
+                    <button ng-click="changeLanguage('en');" class="mdl-button mdl-button--raised instagramButton">{{"F_ENGLISH" | translate }}</button></a>
+</div>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo">2016 PlayBot All Rights Reserved</div>
+            <ul class="mdl-mega-footer__link-list">
+                <li><a href="#/termsOfUse">{{"F_TERMSOFUSE" | translate }}</a></li>
+            </ul>
+        </div>
+
+    </footer>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(".meter > span").each(function() {
+            $(this)
+                    .data("origWidth", $(this).width())
+                    .width(0)
+                    .animate({
+                        width: $(this).data("origWidth")
+                    }, 1200);
+        });
+    });
+</script>
+</body>
+</html>
